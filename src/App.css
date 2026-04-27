@@ -695,3 +695,111 @@ section {
     background-attachment: fixed;
     background-size: cover;
 }
+/* --- 10. ADVANCED MOBILE RESPONSIVENESS --- */
+
+@media (max-width: 768px) {
+    /* Reduce large spacing for small screens */
+    section {
+        padding: 60px 5%; 
+    }
+
+    /* 1. Navigation Fix */
+    nav {
+        padding: 15px 5%;
+        flex-direction: column; /* Stack logo and menu if needed */
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+        font-size: 0.9rem;
+        flex-wrap: wrap; /* Allow menu items to wrap to next line */
+        justify-content: center;
+    }
+
+    /* Hide dropdowns or make them click-friendly for touch */
+    .dropdown-content {
+        position: static; /* Moves dropdown into the normal flow */
+        box-shadow: none;
+        min-width: 100%;
+        background: var(--light);
+    }
+
+    /* 2. Hero Section Adjustments */
+    .hero {
+        height: 50vh;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem; /* Smaller text for phones */
+        padding: 0 10px;
+    }
+
+    /* 3. Layout Grid Fixes */
+    .about-container, 
+    .contact-wrapper, 
+    .services-container, 
+    .footer-grid-simple {
+        grid-template-columns: 1fr !important; /* Force single column */
+        gap: 30px;
+    }
+
+    .about-img img {
+        height: 250px;
+        box-shadow: 8px 8px 0px var(--accent); /* Smaller shadow */
+    }
+
+    /* 4. Form & Button Fixes */
+    input, textarea, select {
+        font-size: 16px; /* Prevents iOS from zooming in on focus */
+    }
+
+    .btn-submit {
+        padding: 12px;
+    }
+
+    /* 5. Glassmorphism Optimization */
+    .about-container, .service-card, .contact-info-card {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* 6. Floating UI Elements */
+    .toggle-btn {
+        top: auto;
+        bottom: 110px; /* Moves theme toggle above WhatsApp icon */
+        right: 20px;
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 30px;
+        right: 20px;
+        font-size: 24px;
+    }
+
+    /* 7. Footer Box Adjustments */
+    .footer-box {
+        padding: 25px;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .mini-socials {
+        justify-content: center;
+    }
+}
+
+/* Extra small screen fix (iPhone SE etc.) */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.4rem;
+    }
+}
